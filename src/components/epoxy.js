@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { CategoryScale, Chart as ChartJS, Legend, LinearScale, LineElement, PointElement, Title, Tooltip } from 'chart.js';
+import React, { useState } from 'react';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
 
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend);
@@ -131,6 +131,12 @@ const EpoxyComponent = () => {
         <p className="text-gray-700">{notification}</p>
         <p className="text-gray-700">
           Cartridge: SMO <br />
+          Epoxy Level: {detectEpoxyLevel()} <br />
+          Temperature: {temperature}°C
+        </p>
+
+        <p className="text-green-700">
+          Cartridge: STM <br />
           Epoxy Level: {detectEpoxyLevel()} <br />
           Temperature: {temperature}°C
         </p>
